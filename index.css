@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
+/* Root Variables */
 :root{
     --color-primary: #6C9BCF;
     --color-danger: #ff0000e1;
@@ -23,6 +22,7 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+/* Dark Theme Variables */
 .dark-mode-variables{
     --color-background: #181a1e;
     --color-white: #202528;
@@ -32,6 +32,7 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+/* Global Styles */
 *{
     margin: 0;
     padding: 0;
@@ -41,9 +42,12 @@
     text-decoration: none;
     box-sizing: border-box;
 }
+
+/* Base Styles */
 html{
     font-size: 14px;
 }
+
 body{
     width: 100vw;
     height: 100vh;
@@ -55,56 +59,7 @@ body{
     background-color:var(--color-background);
 }
 
-/*------- Aside----------- */
-a{
-    color: var(--color-dark);
-}
-img{
-    display: block;
-    width: 100%;
-    object-fit: cover;
-}
 
-h1{
-    font-weight: 800;
-    font-size: 1.8rem;
-}
-h2{
-    font-weight: 600;
-    font-size: 1.4rem;
-}
-
-
-h3{
-    font-weight: 500;
-    font-size: 0.87rem;
-}
-small{
-    font-size: 0.76rem;
-}
-p{
-    color: var(--color-dark-variant);
-}
-
-b{
-    color: var(--color-dark);
-}
-
-.text-muted{
-    color: var(--color-info-dark);
-}
-
-.primary{
-    color: var(--color-primary);
-}
-
-.danger{
-    color: var(--color-danger);
-}
-
-.success{
-    color: var(--color-success);
-}
 
 .warning{
     color: var(--color-warning);
@@ -201,6 +156,7 @@ aside .sidebar a:hover span{
 }
 
 /*---------main --------*/
+
 
 
 
@@ -508,8 +464,7 @@ main {
     border-radius: var(--border-radius-1);
     cursor: pointer;
 }
-
-
+/* Add this to your existing CSS file */
 .product-content {
   flex-grow: 1;
   display: flex;
@@ -564,8 +519,7 @@ main {
   text-decoration: none;
   cursor: pointer;
 }
-
-
+/* Add this to your existing CSS file */
 .product-content {
   flex-grow: 1;
   display: flex;
@@ -651,13 +605,13 @@ main {
     transform: translateX(-50%);
 }
 
-
+/* Modify your existing form styles */
 #productForm {
     max-width: 600px;
     margin: 0 auto;
 }
 
-
+/* Add a back button to the form */
 .back-to-table {
     margin-bottom: 1rem;
     padding: 0.5rem 1rem;
@@ -862,11 +816,14 @@ main {
 
 /* Status styles */
 .status {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
+    padding: 8px 20px;
+    width: 125px;       
     display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600 !important;
+    white-space: nowrap; 
 }
 
 .in-stock {
@@ -1080,7 +1037,7 @@ main {
     font-size: 0.87rem;
 }
 
-
+/* Update selected sort option style */
 .sort-option.selected {
     color: var(--color-primary);
     background: var(--color-light);
@@ -1102,12 +1059,13 @@ main {
     border-bottom: 1px solid var(--color-light);
 }
 
-
+/* Left align only product names */
 .products-table td:first-child,
 .products-table th:first-child {
-    text-align: left; 
+    text-align: left; /* Keep product names left-aligned */
 }
 
+/* Center the status pills */
 .products-table td:nth-child(6) {
     text-align: center;
 }
@@ -1117,14 +1075,14 @@ main {
     min-width: 80px;
 }
 
-
+/* Center the action buttons */
 .products-table td:last-child .action-buttons {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
 }
 
-
+/* arrow rotation */
 .order-button .material-icons-sharp {
     transition: transform 0.3s ease;
 }
@@ -1133,7 +1091,7 @@ main {
     transform: rotate(180deg);
 }
 
-
+/* Notification styles */
 .notification {
     padding: 15px 20px;
     margin-bottom: 10px;
@@ -1170,3 +1128,59 @@ main {
 .notification.hide {
     animation: slideOut 0.5s forwards;
 }
+
+/* Table Text Styles */
+.products-table th {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-info-dark);
+}
+
+.products-table td {
+    font-size: 1rem;
+    color: var(--color-info-dark);
+}
+
+.products-table td:first-child {
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+/* Dark Mode Override */
+.dark-mode-variables .products-table th,
+.dark-mode-variables .products-table td {
+    color: var(--color-dark-variant);
+}
+
+.dark-mode-variables .products-table td:first-child {
+    color: var(--color-dark);
+}
+
+/* Status Pill Styles - Light Mode */
+.status {
+    padding: 8px 20px;
+    width: 125px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Status Pill Styles - Dark Mode */
+.dark-mode-variables .status.in-stock {
+    background: rgba(46, 125, 50, 0.2);
+    color: #4caf50;
+}
+
+.dark-mode-variables .status.low-stock {
+    background: rgba(239, 108, 0, 0.2);
+    color: #ff9800;
+}
+
+.dark-mode-variables .status.out-of-stock {
+    background: rgba(198, 40, 40, 0.2);
+    color: #ef5350;
+}
+

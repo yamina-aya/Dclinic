@@ -203,7 +203,6 @@ aside .sidebar a:hover span{
 /*---------main --------*/
 
 
-/* Add these styles to your existing CSS file */
 
 main {
     margin-top: 1.4rem;
@@ -509,7 +508,8 @@ main {
     border-radius: var(--border-radius-1);
     cursor: pointer;
 }
-/* Add this to your existing CSS file */
+
+
 .product-content {
   flex-grow: 1;
   display: flex;
@@ -564,7 +564,8 @@ main {
   text-decoration: none;
   cursor: pointer;
 }
-/* Add this to your existing CSS file */
+
+
 .product-content {
   flex-grow: 1;
   display: flex;
@@ -650,13 +651,13 @@ main {
     transform: translateX(-50%);
 }
 
-/* Modify your existing form styles */
+
 #productForm {
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Add a back button to the form */
+
 .back-to-table {
     margin-bottom: 1rem;
     padding: 0.5rem 1rem;
@@ -1079,7 +1080,7 @@ main {
     font-size: 0.87rem;
 }
 
-/* Update selected sort option style */
+
 .sort-option.selected {
     color: var(--color-primary);
     background: var(--color-light);
@@ -1101,13 +1102,12 @@ main {
     border-bottom: 1px solid var(--color-light);
 }
 
-/* Left align only product names */
+
 .products-table td:first-child,
 .products-table th:first-child {
-    text-align: left; /* Keep product names left-aligned */
+    text-align: left; 
 }
 
-/* Center the status pills */
 .products-table td:nth-child(6) {
     text-align: center;
 }
@@ -1117,14 +1117,14 @@ main {
     min-width: 80px;
 }
 
-/* Center the action buttons */
+
 .products-table td:last-child .action-buttons {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
 }
 
-/* Add arrow rotation */
+
 .order-button .material-icons-sharp {
     transition: transform 0.3s ease;
 }
@@ -1133,7 +1133,7 @@ main {
     transform: rotate(180deg);
 }
 
-/* Notification styles */
+
 .notification {
     padding: 15px 20px;
     margin-bottom: 10px;

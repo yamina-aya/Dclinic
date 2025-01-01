@@ -1184,3 +1184,41 @@ main {
     color: #ef5350;
 }
 
+/* Logo visibility based on theme */
+.dark-logo {
+    display: none;
+}
+
+.dark-mode-variables .light-logo {
+    display: none;
+}
+
+.dark-mode-variables .dark-logo {
+    display: block;
+}
+
+/* Logo container */
+.logo {
+    display: flex;
+    align-items: center;  /* Vertically center items */
+    gap: 0.5rem;         /* Space between logo and text */
+}
+
+.logo img {
+    width: 4rem;
+    height: 2rem;
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+/* Logo text */
+.logo h2 {
+    margin: 0;          /* Remove default margin */
+    font-size: 1.4rem;  /* Adjust size as needed */
+    font-weight: 600;   /* Make text slightly bold */
+}
+
+/* Dark mode handling */
+.dark-mode-variables .logo img {
+    filter: brightness(0) invert(1);
+}
+

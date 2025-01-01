@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/logo.jpg" >
+                    <h2>Den<span class="danger">tic</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        people
+                    </span>
+                    <h3>Patients</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        badge
+                    </span>
+                    <h3>Employees</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>History</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">
+                        inventory_2
+                    </span>
+                    <h3>Storage</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+           <!-- Main Content -->
+
+ 
+    <!-- Add this inside your main content area, after the aside -->
+<main>
+    <div class="top">
+        <div class="header-right">
+            <div class="theme-toggler">
+                <span class="material-icons-sharp active">light_mode</span>
+                <span class="material-icons-sharp">dark_mode</span>
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Hello, <b>Admin</b></p>
+                </div>
+                <div class="profile-photo">
+                    <span class="material-icons-sharp">person</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Product Management</h1>
+        <div class="right">
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <select id="searchCategory">
+                        <option value="all">All</option>
+                        <option value="name">Name</option>
+                        <option value="category">Category</option>
+                    </select>
+                </div>
+                <div class="filter-box">
+                    <div class="sort-button" id="sortButton">
+                        <span class="material-icons-sharp">sort</span>
+                        <div class="sort-menu">
+                            <div class="sort-option" data-sort="name">
+                                <span class="material-icons-sharp">sort_by_alpha</span>
+                                <span>Name</span>
+                            </div>
+                            <div class="sort-option" data-sort="category">
+                                <span class="material-icons-sharp">category</span>
+                                <span>Category</span>
+                            </div>
+                            <div class="sort-option" data-sort="price">
+                                <span class="material-icons-sharp">payments</span>
+                                <span>Price</span>
+                            </div>
+                            <div class="sort-option" data-sort="stock">
+                                <span class="material-icons-sharp">inventory_2</span>
+                                <span>Stock</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-button" id="orderButton">
+                        <span class="material-icons-sharp">arrow_upward</span>
+                    </div>
+                </div>
+            </div>
+            <button id="addProductBtn" class="add-product-btn">
+                <span class="material-icons-sharp">add</span>
+                Add New Product
+            </button>
+        </div>
+    </div>
+
+    <div class="product-content">
+        <div class="table-container">
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Product ID</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody">
+                    <!-- Table content will be populated by JavaScript -->
+                </tbody>
+            </table>
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <button class="back-to-table">
+                <span class="material-icons-sharp">arrow_back</span>
+                Back to Table
+            </button>
+            <h2>Add New Product</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Category</label>
+                    <input type="text" id="productCategory" name="category" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price</label>
+                    <input type="number" id="productPrice" name="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="productQuantity">Quantity</label>
+                    <input type="number" id="productQuantity" name="quantity" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Add/Edit Product -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Product</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Category</label>
+                    <input type="text" id="productCategory" name="category" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price</label>
+                    <input type="number" id="productPrice" name="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="productQuantity">Quantity</label>
+                    <input type="number" id="productQuantity" name="quantity" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+    </div>
+    <script src="index.js" href="utf-8"></script>
+</body>
+</html>

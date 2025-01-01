@@ -265,8 +265,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <td>${product.quantity}</td>
             <td>${product.category}</td>
             <td>
-                <span class="status ${product.quantity <= 10 ? 'low-stock' : 'in-stock'}">
-                    ${product.quantity <= 10 ? 'Low Stock' : 'In Stock'}
+                <span class="status ${product.quantity <= 0 ? 'out-of-stock' : product.quantity <= 10 ? 'low-stock' : 'in-stock'}">
+                    ${product.quantity <= 0 ? 'Out of Stock' : product.quantity <= 10 ? 'Low Stock' : 'In Stock'}
                 </span>
             </td>
             <td>
@@ -295,7 +295,6 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggler.querySelector('span:nth-child(1)').classList.remove('active');
         themeToggler.querySelector('span:nth-child(2)').classList.add('active');
     }
-
     // Theme toggle event listener
     themeToggler.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode-variables');
@@ -306,3 +305,4 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', document.body.classList.contains('dark-mode-variables') ? 'dark' : 'light');
     });
 });
+

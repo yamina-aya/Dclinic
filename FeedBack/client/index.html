@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="feedback-form">
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label>How would you rate your experience?</label>
+                    <div class="star-rating">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                        <i class="far fa-star" data-rating="6"></i>
+                        <i class="far fa-star" data-rating="7"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>What would you like to give feedback about?</label>
+                    <div class="category-container">
+                        <div class="category-box">
+                            <input type="radio" id="general" name="category" value="general" checked>
+                            <label for="general">
+                                <i class="fas fa-hospital"></i>
+                                General Clinic Feedback
+                            </label>
+                        </div>
+                        <div class="category-box">
+                            <input type="radio" id="services" name="category" value="services">
+                            <label for="services">
+                                <i class="fas fa-tooth"></i>
+                                Services Feedback
+                            </label>
+                        </div>
+                        <div class="category-box">
+                            <input type="radio" id="website" name="category" value="website">
+                            <label for="website">
+                                <i class="fas fa-globe"></i>
+                                Website Feedback
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell us more about your experience</label>
+                    <textarea id="message" rows="8" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

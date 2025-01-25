@@ -1,0 +1,10 @@
+CREATE TABLE prostheses (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(100) NOT NULL,
+    total_amount DECIMAL(10,2) NOT NULL,
+    paid_amount DECIMAL(10,2) NOT NULL,
+    payment_status ENUM('Paid', 'Partial', 'Pending') NOT NULL,
+    status ENUM('In Progress', 'Completed', 'Cancelled') NOT NULL,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL
+);
